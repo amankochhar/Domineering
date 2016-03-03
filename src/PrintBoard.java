@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
 // done
 public class PrintBoard extends Game {
-    
+	
+	static Scanner scan = new Scanner(System.in);
+	
 	public static void printing(String board[][], int num){
 		// prints game board
 		System.out.println("   0 1 2 3 4 5");

@@ -5,8 +5,8 @@ public class PlayerMove extends PrintBoard{
 	
 	public static void play(String board[][], int num){
 		// Players move - get input, check if move legal and add to board
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Players Move");
+		
+		System.out.println("Player 1 Moves");
 		System.out.println("Please enter the row");
 		int rowp = scan.nextInt();
 		System.out.println("Please enter the column");
