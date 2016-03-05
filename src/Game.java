@@ -20,9 +20,12 @@ public class Game{
 		// Welcome Message
 		System.out.println("Welcome to Domineering game");
 		System.out.println("This is a 6x6 matrix game");
-		System.out.println("Which game do you want to play - Single Player(1), Double Player(2)");
+		System.out.println("Menu");
+		System.out.println("Play: ");
+		System.out.println("Vs. Computer (Press 1)");
+		System.out.println("Vs. Player 2 (Press 2)");
 		int answer = scan.nextInt();
-		if(answer == 1){
+		if(answer == 1){ 
 			//System.out.println("Coming Soon :)");
 			// First move by computer
 			CompMove.FirstMove(board, num);
