@@ -1,14 +1,11 @@
 import java.util.Scanner;
 
 public class Game{
-	
+	  static int num = 6; // Matrix Size may be made dynamic in future versions
+	  static String[][] board = new String[num][num];
 	public static void main(String args[]){
 		
 		Scanner scan = new Scanner(System.in);
-	    int num = 6; // Matrix Size may be made dynamic in future versions
-
-	    // creating array of size num+1 for win checker to work 
-	    String[][] board = new String[num][num];
 	    
 		// initializing the board
 		for (int i = 0; i< num; i++ ){
@@ -26,14 +23,19 @@ public class Game{
 		System.out.println("Vs. Player 2 (Press 2)");
 		int answer = scan.nextInt();
 		if(answer == 1){ 
-			//System.out.println("Coming Soon :)");
-			// First move by computer
+			// First move by computer - predefined
 			CompMove.FirstMove(board, num);
 			PrintBoard.printing(board, num);
-			while(WinChecker.Winner(board, num) == false){
+			while(WinChecker.Winner(board, num) == false)
+			{
 			PlayerMove.play(board, num);
 			CompMove.Move(board, num);
+			PrintBoard.printing(board, num);
 			//main(args);
+			}
+			if(WinChecker.Winner(board, num) == true){
+				System.out.println("We have a winner!");
+				System.exit(0);
 			}
 		}
 		if(answer == 2){
@@ -44,11 +46,14 @@ public class Game{
 			PlayerMove.play(board, num);
 			Player2Move.Move(board, num);
 			}
+			if(WinChecker.Winner(board, num) == true){
+				System.out.println("We have a winner!");
+				System.exit(0);
+			}
 		}
 		else{
 			System.out.println("Please choose again");
 			main(args);
 		}
-
 	}
 }
