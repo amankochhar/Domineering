@@ -1,5 +1,3 @@
-// done
-import java.util.Scanner;
 
 public class PlayerMove extends PrintBoard{
 	
@@ -19,8 +17,10 @@ public class PlayerMove extends PrintBoard{
 		// check if legal move or not
 		if(board[rowp][colp] == "." && board[rowp][colp+1] == "."){
 		// Saving player move on board
-		board[rowp][colp] = "-";
-		board[rowp][colp+1]="-";
+		CompMove.place_item(rowp, colp, "HORIZONTAL", true);
+			
+		//board[rowp][colp] = "-";
+		//board[rowp][colp+1]="-";
 		printing(board, num);
 		}
 		else{
@@ -28,6 +28,5 @@ public class PlayerMove extends PrintBoard{
 			play(board, num);
 			}
 		}
-		
 	}
 }
